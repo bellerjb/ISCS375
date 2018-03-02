@@ -1,0 +1,81 @@
+/* Based on the Previous YouTube Comment section.
+ * Recreated exclusively with screenshots */
+img {
+  width: 48px;
+  height: 48px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 12px 0 0;
+}
+
+#commentForm {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px;
+  border: #d3d3d3 solid 1px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #5f5f5f;
+}
+
+#commentCount {
+  font-size: 10px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+#commentCount #numPosts {
+  font-weight: normal;
+}
+
+#icon {
+  display: none;
+}
+
+#commentBox {
+  border-color: #d3d3d3;
+  color: #5f5f5f;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#widgets, .comment {
+  margin: 20px 0;
+  padding: 20px 0 0 68px;
+  position: relative;
+  font-size: 14px;
+}
+
+.comment {
+  min-height: 48px;
+}
+
+#name {
+  border: none !important;
+  margin: 0 0 4px;
+  color: #5f5f5f;
+}
+
+#submitButton {
+  margin: 0 0 0 260px;
+}
+
+.username {
+  background: none;
+  font-weight: bold;
+  color: #2d96e6;
+  margin: 0 20px 0 0;
+  font-size: 12px;
+}
+
+.timestamp {
+  font-size: 10px;
+  color: #b3b3b3;
+}
+
+.info, .icon, #preview, #name {
+  position: absolute;
+  top: 0;
+}
+
+.icon, #preview {
+  left: 0;
+}
+

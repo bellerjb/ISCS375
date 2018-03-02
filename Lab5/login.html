@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A Reasonably Secure Login Form</title>
+  <style>
+    body {
+      max-width: 640px;
+      margin: 0 auto;
+      background-color: #F5F5F5;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1em;
+      text-indent: initial;
+      line-height: 1.5;
+      color: #212121;
+    }
+
+    #title {
+      text-align: center;
+      margin-top: 2em;
+    }
+
+    form * {
+      margin: 1em;
+      padding: 1em;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 1 100%;
+          -ms-flex: 0 1 100%;
+              flex: 0 1 100%;
+      line-height: 1.5;
+    }
+    form #submit {
+      padding: 0.5em;
+    }
+
+    input:focus {
+      outline: #828282 auto 5px;
+    }
+
+    .flex {
+      margin: 1em 0 0;
+      padding: 1em;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+
+    .box {
+      border-radius: 4px;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 1%;
+          -ms-flex: 1 1 1%;
+              flex: 1 1 1%;
+      margin: 1em;
+      padding: 1em;
+      min-width: 200px;
+    }
+    .box ul {
+      margin-bottom: 0;
+    }
+    .box li {
+      margin-bottom: 0.5em;
+    }
+    .box h4 {
+      font-weight: bold;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .no {
+      background-color: #f2acab;
+      box-shadow: 0 1px 1px rgba(239, 83, 80, 0.25);
+    }
+
+    .yes {
+      background-color: #b5dbb6;
+      box-shadow: 0 1px 1px rgba(102, 187, 106, 0.25);
+    }
+
+    div#info {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="title">
+    <h1>A Reasonable Secure Login Form</h1>
+  </div>
+  <form class="flex" method="POST" action="login.cgi">
+    <input id="username" type="text" name="username" placeholder="Username">
+    <input id="password" type="password" name="password" placeholder="Password">
+    <input id="submit" type="submit" value="Login">
+  </form>
+  <div id="info">Try logging in with user:password or admin:SecurePa$$w0rd1</div>
+  <div class="flex">
+    <div class="box yes">
+      <h4>Security Features</h4>
+      <ul>
+        <li>Passwords are securely hashed using <a href="https://en.wikipedia.org/wiki/Bcrypt">Bcrypt</a>.</li>
+        <li>Javascript is not used as it is not necessary. Users of NoScript or a browser that does not support JS, rejoice!</li>
+        <li>Per Bcrypt specification, all passwords must be salted.  As such, rainbow table attacks are impossible.</li>
+        <li>All server responses are specifically worded to neither confirm nor deny the existence of accounts, making attacking more difficult.</li>
+      </ul>
+    </div>
+    <div class="box no">
+      <h4>Possible Improvements</h4>
+      <ul>
+        <li>What good is a secure password checking system if the password can be sniffed out of the air? Use HTTPS.</li>
+        <li>My implementation is unoptimized and written in pure Python, so it is quite slow.  A faster implementation would allow more iterations to be done in the same amount of time, making it harder to crack.  While you are at it, make sure that the implementation you use is audited as well.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+.image {
+  max-width: 250px;
+  max-height: 250px;
+  margin-right: 20px;
+  float: left;
+}
+
+.post .post > a > .image {
+  max-width: 125px;
+  max-height: 125px;
+}
+
+.post {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid black;
+  overflow: auto;
+}
+
+.post .post:last-child {
+  margin-bottom: 0;
+}
+
+.titleBlock {
+  width: 100%;
+}
+
+.name {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.title, .timestamp, .idLink {
+  margin-right: 10px;
+}
+
+.comment {
+  font-family: serif;
+}
+
+#form {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  border: 1px solid black;
+  padding: 20px;
+  width: 400px;
+  background-color: white;
+  display: none;
+}
+
+#form input, #form textarea {
+  width: calc(80% - 5px);
+  float: right;
+  display: block;
+}
+
+#form textarea {
+  width: calc(80% - 7px);
+}
+
+#form label {
+  float: left;
+  width: calc(20% - 5px);
+}
+
+.field {
+  overflow: auto;
+}
+
+.newPost {
+  margin-left: 20px;
+}
+
+#alertBox {
+  display: none;
+  width: 600px;
+  text-align: center;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  margin-left: -300px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: white;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ISC S375 Hangman</title>
+  <script src="words.js"></script>
+  <script src="hangman.js"></script>
+  <link rel="stylesheet" href="hangman.css">
+</head>
+<body onload="loadGame()">
+  <!-- A Beautiful ASCII Hangman-like game inspired by Doublespeak Games' "A Dark Room" and Tarn and Zach Adams' "Dwarf Fortress" -->
+  <div class="container">
+    <div id="log">
+      <div class="overlay"></div>
+    </div>
+    <div id="main">
+      <!-- Image made using Reddit user /u/OPacolypse 's DF 0.34.11 save -->
+      <img id="img1" src="img/1.png" alt="" style="opacity: 0">
+      <img id="img2" src="img/2.png" alt="" style="opacity: 0">
+      <img id="img3" src="img/3.png" alt="" style="opacity: 0">
+      <img id="img4" src="img/4.png" alt="" style="opacity: 0">
+      <img id="img5" src="img/5.png" alt="" style="opacity: 0">
+      <img id="img6" src="img/6.png" alt="" style="opacity: 0">
+      <img id="img7" src="img/7.png" alt="" style="opacity: 0">
+    </div>
+    <div id="guess">
+      <div id="word"></div>
+      <div id="timer"></div>
+    </div>
+  </div>
+</body>
+</html>

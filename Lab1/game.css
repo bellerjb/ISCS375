@@ -1,0 +1,68 @@
+/* Reset Browser CSS with Normalize.css by Nicolas Gallagher */
+@import "normalize.css";
+
+html {
+  font-size: 150%;
+  line-height: 1.33333em;
+}
+
+body {
+  background-size: cover !important;
+  color: #FAFAFA;
+  text-align: center;
+
+  /*Shadow trick found at https://stackoverflow.com/questions/4919076/outline-effect-to-text/4919231#4919231*/
+
+  text-shadow:
+    -1px -1px 0 #212121,
+    1px -1px 0 #212121,
+    -1px 1px 0 #212121,
+    1px 1px 0 #212121;
+
+  /* Based on this pen by Chris Coyier:
+   * https://codepen.io/chriscoyier/pen/FqDyi/ */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  line-height: 4rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  margin-top: 0px;
+}
+
+p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+  text-align: left;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover span {
+  text-decoration: underline;
+}
+
+.object {
+  bottom: 0;
+  left: 10vw;
+  position: fixed;
+
+  z-index: -100;
+}
+
+.tall {
+  height: 60vh;
+}
+
+.wide {
+  width: 40vw;
+}

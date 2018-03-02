@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>start.html</title>
+    <link rel="stylesheet" type="text/css" href="game.css">
+    <style>
+      body {
+        background: url(img/jungle.png) no-repeat center bottom fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content" style="display: none;">
+      <h1></h1>
+      <p>Part of the map was missing, but your gut feeling led you this far.  In the distance you see a sandstone monolith.  Through the brush and trees, its orange glow seeps through the leaves.  Here it is...<br>The Temple of Knowledge.</p>
+      <a href="entrance.html">&#9656; <span>Approach the Temple</span></a><br>
+      <a href="../index.html">&#9656; <span>Turn Around</span></a><br>
+    </div>
+    <script type="text/javascript">
+      name = prompt("Insert Name");
+      document.title = name + " and the Quest for Knowledge";
+      document.querySelector("h1").innerHTML = name + " and the Quest for Knowledge";
+      document.querySelector(".content").style.display = "block";
+    </script>
+  </body>
+</html>

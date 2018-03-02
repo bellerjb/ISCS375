@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 7 Image Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="getXMLFile()">
+  <div id="alertBox"></div>
+  <div class="newPost">[<a href="javascript:newPost(0)">Start a New Thread</a>]&nbsp;&nbsp;[<a href="javascript:getXMLFile()">Refresh</a>]</div>
+  <div id="posts"></div>
+  <div class="newPost">[<a href="javascript:newPost(0)">Start a New Thread</a>]&nbsp;&nbsp;[<a href="javascript:getXMLFile()">Refresh</a>]</div>
+  <form id="form" enctype="multipart/form-data" action="post.cgi" method="post">
+    <input id="parent" type="hidden" name="parent">
+    <div id="formName" class="field">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" placeholder="Anonymous">
+    </div><br />
+    <div id="formTitle" class="field">
+      <label for="title">Title</label>
+      <input id="title" type="text" name="title">
+    </div><br />
+    <div id="formComment" class="field">
+      <label for="comment">Comment</label>
+      <textarea id="comment" name="comment" cols="30" rows="10"></textarea>
+    </div><br />
+    <div id="formImage" class="field">
+      <label for="image">File</label>
+      <input id="image" name="image" accept=".jpg, .jpeg, .png, .gif, .bmp, .webp" type="file">
+    </div><br />
+    <div id="formSubmit" class="field">
+      <button type="button" onclick="closeForm()">Close</button>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+  <script src="posts.js"></script>
+</body>
+</html>

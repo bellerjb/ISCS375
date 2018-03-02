@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=utf-8 />
+  <title>Transient Posts on a Transient Topic</title>
+  <script src="form.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="topic">
+    <h2>Topic</h2>
+    <p>Some students claim that the current computer science curriculum suffers
+    from many defects and deficiencies.  Faculty, however, seem largely satisfied
+    with the current major and general education requirements.  What are your
+    thoughts?</p>
+  </div>
+
+  <form id="commentForm" action="javascript:glitterSubmitForm()" method="post">
+    <div id="commentCount">All Comments <span id="numPosts">(0)</span></div>
+
+    <div id="widgets">
+      <label for="icon">
+        <img src="icon.svg" id="preview" />
+        <input type="file" onchange="previewFile()" id="icon" name="icon" accept=".jpg, .jpeg, .png" />
+      </label>
+      <input name="name" id="name" placeholder="Type name"></input>
+      <textarea name="comment" id="commentBox" rows="3" cols="40" placeholder="Type your comments here."></textarea>
+      <br/>
+      <button name="submit" type="submit" id="submitButton">Post</button>
+    </div>
+
+    <div id="comments"></div>
+  </form>
+</body>
+</html>

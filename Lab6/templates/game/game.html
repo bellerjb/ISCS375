@@ -1,0 +1,19 @@
+{% import 'game/interface.html' as interface %}
+
+{% extends "game/base.html" %}
+
+{% block content %}
+  <div id="main">
+    {{ interface.ship() }}
+    {{ interface.map(symbol, location) }}
+    {{ interface.weapons(weapons) }}
+    <div id="bar">
+      {{ interface.health(health) }}
+      {{ interface.money(money) }}
+      {{ interface.jump(power, destinations) }}
+    </div>
+  </div>
+  <div id="message"{% if content|length < 2 %}style="display:none"{% endif %}>
+    {{ interface.message(content, options) }}
+  </div>
+{% endblock %}

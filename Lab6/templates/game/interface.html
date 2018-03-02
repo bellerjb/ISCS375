@@ -1,0 +1,110 @@
+{% macro map(symbol='K', location=0) -%}
+<pre id="map">
+Map
+&#x2554;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2557;
+&#x2551;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x250c;&#x2500;[{{ '%s' % symbol if location == 2 else ' ' }}]&#x2500;&#x2500;&#x2500;[{{ '%s' % symbol if location == 3 else ' ' }}]&#x2500;&#x2510;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2551;
+&#x2551;&nbsp;&nbsp;[{{ '%s' % symbol if location == 1 else 'H' }}]&#x2500;&#x2524;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x251c;&#x2500;[{{ '%s' % symbol if location == 7 else '!' }}]&#x2500;&#x2510;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2551;
+&#x2551;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2502;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x250c;&#x2500;[{{ '%s' % symbol if location == 5 else '$' }}]&#x2500;&#x2518;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x251c;&#x2500;[{{ '%s' % symbol if location == 9 else ' ' }}]&#x2500;&#x2500;&#x2500;[{{ '%s' % symbol if location == 10 else 'G' }}]&nbsp;&nbsp;&#x2551;
+&#x2551;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2514;&#x2500;[{{ '%s' % symbol if location == 4 else '!' }}]&#x2500;&#x2524;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x250c;&#x2500;[{{ '%s' % symbol if location == 8 else ' ' }}]&#x2500;&#x2518;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2551;
+&#x2551;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2514;&#x2500;[{{ '%s' % symbol if location == 6 else ' ' }}]&#x2500;&#x2518;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2551;
+&#x255a;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255d;
+</pre>
+{% endmacro %}
+
+{% macro health(health=0, width=3) -%}
+<pre id="health">
+Health
+&#x2554;&#x2550;{% for number in range(width * 20) %}&#x2550;{% endfor %}&#x2550;&#x2557;
+&#x2551;&nbsp;{% for number in range(width * health) %}&#x2588;{% endfor %}{% for number in range(width * (20 - health)) %}&nbsp;{% endfor %}&nbsp;&#x2551;
+&#x255a;&#x2550;{% for number in range(width * 20) %}&#x2550;{% endfor %}&#x2550;&#x255d;
+</pre>
+{% endmacro %}
+
+{% macro ship() -%}
+<pre id="ship">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_____________________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/+----------------............--:\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/....:///------------oossooo/:::-..|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|..-dhdyoosssssssysssyyyyyssyys/...d\_____&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/...+&nbsp;&nbsp;&nbsp;y--/:::/o+o:/oooooy///+++-...-----:s\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|...d&nbsp;&nbsp;&nbsp;d::/----+/+-------:--/oys+-:-:-::-...-\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|...y&nbsp;ddN+///---+/+///+++//::so+o+++oo+ooo/...-+\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|...:&nbsp;&nbsp;&nbsp;d////:::o+ss////////os+syyyyyyyyyyo/-....-:o\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/+..../oyo++ooosyhhyo///////+ooo+////////++syys+:-....-\___________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;/:....--::+ossyyyyyssso//////////////////////ossyyyys+:-.......---::://\__________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;/...-+syyyyyyyssyysyso+/::::::::::::::::::::::osssssyyyyso++//::::-----..........--d\__&nbsp;&nbsp;&nbsp;
+/...-+yyysssssssssooso+-........................:ossoossssssyyyyyyyyyssssssooo++//:-....:o\&nbsp;
+|...syyyssooossso/:-///..........................-:osooooooooooosooossoooooosysyyyyyo/-...d|
+|...soosyyoooooo+-..///...............-------...---/::-----.....:::-::-------/////+osys/...|
+|...-ssydh///////:..///...............:+ssss:...:..::.............:..........///:-+::/-/...|
+|....sshdh////////..///...............:+ssss:...:..:-.............:..........///:.+:-:-/...|
+|...+soyhh///////-..///...............:/++++:...:--::...........--:---.......///:-+/-::/...|
+|...ssyso+///////...///.........................---:.-..----...-:---::-------/////+-.-:-...|
+\...+so++////:-....-///............................``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;``...-...--.....--:/:/:::--....+/&nbsp;
+&nbsp;|...-+oo+/:-....``-:::--.......................-``&nbsp;&nbsp;&nbsp;````..------:-------------......-//&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;\....-::::::----:::-.`.-......................-&nbsp;&nbsp;``.--.-----................----:/o/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;\-......-//+/++o:--.-.``````````````````````-``.:----.....--://+oossyhhdd&nbsp;N/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|...-dddy+++o+syhhyo```````/o+/+--------::+----.....:o/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|...+&nbsp;dd&nbsp;o+++:--o/oo```````--+-:+//////++o/.....-+/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|...d&nbsp;NN&nbsp;///-...+/+---------.:oo+/:://:///-...+/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|...y&nbsp;hhh--:----+/+-://///o:-:/+/:.........../&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\...:&nbsp;&nbsp;&nbsp;o--:...-/:/.:++++++.--/:/...-++++osh/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\.../os:-:----::::---++oo+++/+/:-../&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\...................-::::-----...|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\o++/++oosssssso/-.......-::/+/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;----&nbsp;&nbsp;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</pre>
+{% endmacro %}
+
+{% macro jump(power, destinations) -%}
+<pre id="jump">
+Jump
+&#x2554;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2557;
+{% if power != 10 %}&#x2551;&nbsp;{% for number in range(power) %}&#x2588;{% endfor %}{% for number in range(10 - power) %}&nbsp;{% endfor %}&nbsp;&#x2551;{% else %}&#x2551;&nbsp;&nbsp;&nbsp;&nbsp;JUMP&nbsp;&nbsp;&nbsp;&nbsp;&#x2551;
+&#x2560;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2563;{% for zone in destinations.keys() %}
+&#x2551;&nbsp;<a href="{{ destinations[zone] }}">{{ zone }}</a>&nbsp;&#x2551;{% endfor %}{% endif %}
+&#x255a;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255d;
+</pre>
+{% endmacro %}
+
+{% macro weapons(weapons) -%}
+<pre id="weapons">
+Weapons
+&#x2554;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2557;
+&#x2551;&nbsp;{% if weapons["missile"] == 0 %}<a href="?action=missile">FIRE PEGASUS MISSILE</a>{% else %}<s>FIRE PEGASUS MISSILE</s>{% endif %}&nbsp;&#x2551;
+&#x2551;&nbsp;{% if weapons["missile"] == 0 %}2/1 Damage. Pierce.{% else %}Out for {{ '%d' % weapons["missile"] }} turns.&nbsp;&nbsp;&nbsp;{% endif %}&nbsp;&nbsp;&#x2551;
+&#x2560;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2563;
+&#x2551;&nbsp;{% if weapons["burst"] == 0 %}<a href="?action=burst">FIRE BURST LASER II</a>{% else %}<s>FIRE BURST LASER II</s>{% endif %}&nbsp;&nbsp;&#x2551;
+&#x2551;&nbsp;{% if weapons["burst"] == 0 %}3/3 Damage. Quick.{% else %}Out for {{ '%d' % weapons["burst"] }} turns.&nbsp;&nbsp;{% endif %}&nbsp;&nbsp;&nbsp;&#x2551;{% if weapons["ion"] is defined %}
+&#x2560;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2563;
+&#x2551;&nbsp;{% if weapons["ion"] == 0 %}<a href="?action=ion">FIRE HEAVY ION</a>{% else %}<s>FIRE HEAVY ION</s>{% endif %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2551;
+&#x2551;&nbsp;{% if weapons["ion"] == 0 %}Disables Enemy.&nbsp;{% else %}Out for {{ '%d' % weapons["ion"] }} turns.{% endif %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2551;{% endif %}{% if weapons["flak"] is defined %}
+&#x2560;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2563;
+&#x2551;&nbsp;{% if weapons["flak"] == 0 %}<a href="?action=flak">FIRE FLAK GUN II</a>{% else %}<s>FIRE FLAK GUN II</s>{% endif %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#x2551;
+&#x2551;&nbsp;{% if weapons["flak"] == 0 %}14/2 Damage. Slow.{% else %}Out for {{ '%d' % weapons["flak"] }} turns.&nbsp;&nbsp;{% endif %}&nbsp;&nbsp;&nbsp;&#x2551;{% endif %}
+&#x2560;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2563;
+&#x2551;&nbsp;<a href="?action=pass">PASS UNTIL NEXT TURN</a>&nbsp;&#x2551;
+&#x255a;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255d;
+</pre>
+{% endmacro %}
+
+{% macro money(money) -%}
+<pre id="money">
+Money
+&#x2554;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2557;
+&#x2551;&nbsp;&nbsp;$&nbsp;{{ '{0:03d}'.format(money) }}&nbsp;&nbsp;&#x2551;
+&#x255a;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x255d;
+</pre>
+{% endmacro %}
+
+{% macro message(content, options) -%}
+<div id="content">
+  <div id="contentText">{{ content|safe }}</div>
+</div>
+<div id="options">{% for option in options.keys() %}
+  <div class="box">
+    <a href="{{ options[option] }}">{{ option }}</a>
+  </div>{% endfor %}
+</div>
+{% endmacro %}
+
